@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th>Flag</th>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let country of countries; let i = index" class="text-center">
+                <tr>
+                    <td>
+                        <img src="{{country.flags.png}}">
+                    </td>
+                    <td>
+                        {{country.name.common | slice:0:12}}
+                    </td>
+                    <td>
+                        {{country.population | number}}
+                    </td>
+                    <td>
+                        <a class="btn btn-success btn-block" [routerLink]="['/country', country.cca3]">Show Country</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

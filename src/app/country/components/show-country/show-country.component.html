@@ -1,0 +1,28 @@
+<div class="alert alert-info" *ngIf="!country; else detailsCountry">
+    Wait, loading....
+</div>
+
+<ng-template #detailsCountry>
+    <div class="row alert alert-info">
+        <h3 class="text-center alert alert-success">{{country.name.common}}</h3>
+        <div class="col">
+            <img [src]="country.flags.png" [alt]="[country.name.common]">
+        </div>
+        <div class="col text-center">
+            <h5>Information:</h5>
+            <ul>
+                <li><b>Official Name: </b>{{country.name.official}}</li>
+                <li><b>Capital:</b> {{country.capital}}</li>
+                <li><b>Population:</b> {{country.population | number}}</li>
+                <li><b>Area:</b> {{country.area | number}}</li>
+                <li><b>Region: </b> {{country.region}}</li>
+                <li><b>SubRegion: </b> {{country.subregion}}</li>
+                <li><b>Web Pages on Country: </b>{{country.tld}}</li>
+                <li><b>Start Of Week: </b>{{country.startOfWeek | titlecase}}</li>
+            </ul>
+        </div>
+        <div class="text-center">
+            <a [routerLink]="['/home']" class="btn btn-danger btn-block">Back to Main Page</a>
+        </div>
+    </div>
+</ng-template>

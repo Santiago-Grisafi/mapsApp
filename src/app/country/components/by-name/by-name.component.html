@@ -1,0 +1,6 @@
+<h2 class="text-center">By Name</h2>
+<hr>
+<input type="text" placeholder="Input the name of country" class="form-control"
+#textSearch (keyup)="searchTerm()" name="textSearch" (input)="keyPress($event)">
+<hr>
+<app-table [countries]="countries" [error]="error" [term]="term"></app-table>

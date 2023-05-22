@@ -1,0 +1,12 @@
+<h2 class="text-center">By Region</h2>
+<hr>
+<div class="row mt-3">
+    <div class="col">
+        <h6>Filter By Continent:</h6>
+        <button *ngFor="let region of regions; let i = index" class="btn btn-outline-primary button"
+            [class]="(activeRegion==region) ? 'btn btn-primary text-white' : 'btn btn-outline-primary'"
+            (click)="activedRegion(region)">{{region | titlecase}}</button>
+    </div>
+</div>
+<hr>
+<app-table2 [countries]="countries" *ngIf="this.activeRegion!=''"></app-table2>
